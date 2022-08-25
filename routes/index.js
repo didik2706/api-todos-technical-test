@@ -1,5 +1,7 @@
 const router = require("express").Router();
 
-router.use("/activity-groups");
+const activitiesRoutes = require("./activity.router");
+
+router.use("/activity-groups", activitiesRoutes);
 
 module.exports = router;

@@ -25,18 +25,6 @@ module.exports = {
         type: Sequelize.ENUM,
         values: ["very-high", "high", "medium", "low", "very-low"],
         allowNull: false
-      },
-      created_at: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      updated_at: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      deleted_at: {
-        type: Sequelize.DATE,
-        allowNull: true
       }
     });
 

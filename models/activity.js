@@ -22,30 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    created_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-    },
-    updated_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: false,
-    },
-    deleted_at: {
-      type: DataTypes.TIMESTAMP,
-      allowNull: true,
     }
   }, {
     sequelize,
-    hooks: {
-      beforeCreate: (activity, opt) => {
-        activity.created_at = new Date();
-        activity.updated_at = new Date();
-      },
-      afterUpdate: (activity, opt) => {
-        activity.updated_at = new Date();
-      }
-    },
     modelName: 'Activity',
   });
   return Activity;

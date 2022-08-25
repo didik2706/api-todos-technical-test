@@ -31,30 +31,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.ENUM,
       values: ["very-high", "high", "medium", "low", "very-low"],
       allowNull: false
-    },
-    created_at: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    updated_at: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    deleted_at: {
-      type: DataTypes.DATE,
-      allowNull: true
     }
   }, {
     sequelize,
-    hooks: {
-      beforeCreate: (todo, opt) => {
-        todo.created_at = new Date();
-        todo.updated_at = new Date();
-      },
-      afterUpdate: (todo, opt) => {
-        todo.updated_at = new Date();
-      }
-    },
     modelName: 'Todo',
   });
   return Todo;
