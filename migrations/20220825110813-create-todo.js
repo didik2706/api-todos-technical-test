@@ -19,11 +19,20 @@ module.exports = {
       is_active: {
         type: Sequelize.BOOLEAN,
         allowNull: true,
-        defaultValue: false
+        defaultValue: true
       },
       priority: {
         type: Sequelize.ENUM,
         values: ["very-high", "high", "medium", "low", "very-low"],
+        allowNull: true,
+        defaultValue: "very-high"
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
         allowNull: false
       }
     });

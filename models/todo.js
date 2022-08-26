@@ -25,12 +25,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     is_active: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false
+      allowNull: true,
+      defaultValue: true
     },
     priority: {
       type: DataTypes.ENUM,
       values: ["very-high", "high", "medium", "low", "very-low"],
-      allowNull: false
+      allowNull: true,
+      defaultValue: "very-high"
     }
   }, {
     sequelize,
